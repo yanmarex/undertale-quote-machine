@@ -26,7 +26,7 @@ function getQuote() {
   //Set the API endpoint
   request.open(
     "GET",
-    "https://got-quotes.herokuapp.com/quotes"
+    "https://zenquotes.io/api/random"
   );
 
   request.onload = function() {
