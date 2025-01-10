@@ -33,7 +33,7 @@ function getQuote() {
     var data = JSON.parse(this.response);
 
     if (request.status >= 200 && request.status < 400) {
-      p.textContent = '"' + data.quote + '"' + " - " + data.character;
+      p.textContent = '"' + data.q + '"' + " - " + data.a;
     } else {
       p.textContent = "Flowey it's the responsable :[";
     }
