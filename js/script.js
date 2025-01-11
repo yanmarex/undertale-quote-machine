@@ -67,7 +67,7 @@ function shoot() {
   gaster2.classList.toggle("shoot-2");
 }
 
-//Events lisnteners
+//Events listeners
 buttonQuote.addEventListener("click", getQuote);
 buttonQuote.addEventListener("click", shoot);
 buttonTweet.addEventListener("click", tweetear);
