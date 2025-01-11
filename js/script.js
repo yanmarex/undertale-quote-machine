@@ -18,28 +18,30 @@ var buttonQuote = document.getElementById("quote-btn");
 var buttonTweet = document.getElementById("tweet-btn");
 var buttonFight = document.getElementById("fight-btn");
 
-//Get new quotes
 function getQuote() {
-  //Request variable
-  var request = new XMLHttpRequest();
+  // API endpoint
+  const endpoint = "https://zenquotes.io/api/random";
 
-  //Set the API endpoint
-  request.open(
-    "GET",
-    "https://zenquotes.io/api/random"
-  );
-
-  request.onload = function() {
-    var data = JSON.parse(this.response);
-
-    if (request.status >= 200 && request.status < 400) {
-      p.textContent = '"' + data.q + '"' + " - " + data.a;
-    } else {
-      p.textContent = "Flowey it's the responsable :[";
-    }
-  };
-
-  request.send();
+  // Use fetch to make the GET request
+  fetch(endpoint)
+    .then((response) => {
+      // Check if the response is OK
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+      return response.json();
+    })
+    .then((data) => {
+      // Display the quote and author
+      const quote = data;
+      p.textContent = `"${quote.q}" - ${quote.a}`;
+      console.log(quote);
+    })
+    .catch((error) => {
+      // Handle errors
+      p.textContent = "Flowey is the responsible :[";
+      console.error("Fetch error:", error);
+    });
 }
 
 //Tweet the quote
