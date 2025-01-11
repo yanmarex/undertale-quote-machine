@@ -20,7 +20,7 @@ var buttonFight = document.getElementById("fight-btn");
 
 function getQuote() {
   // API endpoint
-  const endpoint = "https://zenquotes.io/api/random";
+  const endpoint = "https://dummyjson.com/quotes/random";
 
   // Use fetch to make the GET request
   fetch(endpoint)
@@ -33,9 +33,9 @@ function getQuote() {
     })
     .then((data) => {
       // Display the quote and author
-      const quote = data;
-      p.textContent = `"${quote.q}" - ${quote.a}`;
-      console.log(quote);
+      const xxx = data;
+      p.textContent = `"${xxx.quote}" - ${xxx.author}`;
+      console.log(xxx);
     })
     .catch((error) => {
       // Handle errors
