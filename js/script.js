@@ -35,7 +35,6 @@ function getQuote() {
       // Display the quote and author
       const xxx = data;
       p.textContent = `"${xxx.quote}" - ${xxx.author}`;
-      console.log(xxx);
     })
     .catch((error) => {
       // Handle errors
